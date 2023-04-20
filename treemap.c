@@ -98,8 +98,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
   if(node == NULL) return;
 
-  if(node->left == NULL&& node->right == NULL) {
-    free(node);
+  if(node->left == NULL && node->right == NULL) {
+    //free(node);
     node = NULL;
   }else  if(node->left != NULL && node->right != NULL){
     TreeNode* iyou = minimum(node);
