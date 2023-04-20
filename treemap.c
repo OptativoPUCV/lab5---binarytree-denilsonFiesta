@@ -182,7 +182,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       if(it->right == NULL){
         
         if(firstUp(tree, it, it->parent)==NULL){
-          if(it== NULL) printf("llegue aca\n");
+          if(it->pair== NULL) printf("llegue aca\n");
           return it->pair;
         
         }else return (firstUp(tree, it, it->parent) ) ->pair;
