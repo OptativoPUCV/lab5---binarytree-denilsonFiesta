@@ -89,7 +89,6 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 }
 
 TreeNode * minimum(TreeNode * x){
-
   if(x->left == NULL) return x;
   else return minimum(x->left);
 }
@@ -97,6 +96,27 @@ TreeNode * minimum(TreeNode * x){
 
 void removeNode(TreeMap * tree, TreeNode* node) {
 
+  if(node == NULL) return;
+
+  if(node->left == NULL&& node->right == NULL) {
+    free(node);
+    node = NULL;
+  }else  if(nodenode->left != NULL && node->right != NULL){
+    TreeNode* iyou = min(node);
+    node->pair = iyou->pair;    
+    free(iyou);
+    iyou = NULL;
+  }else if(nodenode->left != NULL){
+
+    node->pair = node->left->pair;
+    free(node->left);
+    node->left = NULL;
+  }else{
+    node->pair = node->right->pair;
+    free(node->right);
+    node->right= NULL;
+  }
+  
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
