@@ -49,17 +49,30 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   //holi UwU
 
   TreeNode* it = tree->root;
+  TreeNode* parent;
+  
+  if(it==NULL){  
+    TreeNode* new =  createTreeNode(key, value);
+    tree->root = new;
+    return
+  }
   
   while(it != NULL){
 
     if(is_equal(tree, it->pair->key, key)) return;
 
-    if( ! tree->lower_than(it->pair->key,key) ) it = it->left; 
-    else it = it->right;
+    if( ! tree->lower_than(it->pair->key,key) ){
+      parent = it;
+      it = it->left; 
+    }else{
+      parent = it;
+      it = it->right;
+    } 
   }
 
-  it->pair->key = key;
-  it->pair->value = value;
+  TreeNode* new =  createTreeNode(key, value);
+
+  new->parent = parent;
   
 }
 
