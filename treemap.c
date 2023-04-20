@@ -193,7 +193,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
       }
       it = it->right;
     }
-
+    if(it== NULL)printf("holi UWU \n");
   }
 
   return it->pair;
