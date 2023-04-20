@@ -169,6 +169,19 @@ Pair * firstTreeMap(TreeMap * tree) {
   
 }
 
-Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+TreeNode * firstUp(TreeNode * node, TreeNode* parent){
+  if(parent == NULL) return NULL;
+  if(node->pair->key < parent->pair->key) return parent;
+  else return firstUp(node, parent->parent);
 }
+
+Pair * nextTreeMap(TreeMap * tree) {
+    
+    if(tree->current->right != NULL){
+      tree->current = minimum(tree->current->right);
+      return tree->current->pair;
+    }else{
+      tree->current = firstUp(tree->current, tree->parent);
+      return tree->current->pair;
+    }
+  }
