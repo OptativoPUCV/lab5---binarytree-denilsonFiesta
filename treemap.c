@@ -71,7 +71,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         break;
       }
     }else{
-      parent = it;
+      //parent = it;
       it = it->right;
       
       if(it == NULL){
