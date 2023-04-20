@@ -166,11 +166,6 @@ Pair * firstTreeMap(TreeMap * tree) {
   return tree->current->pair;
 }
 
-TreeNode * firstUp(TreeNode * node, TreeNode* parent){
-  if(parent == NULL) return NULL;
-  if(node->pair->key > parent->pair->key) return firstUp(node, parent->parent);
-  else return parent;
-}
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current->right != NULL){
