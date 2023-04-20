@@ -180,12 +180,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }else{
 
       if(it->right == NULL){
-        
-
-          
-        return (firstUp(tree, it, it->parent) ) ->pair;
-        
-
+        if((firstUp(tree, it, it->parent) ) ==NULL) return NULL;
+        else return (firstUp(tree, it, it->parent) ) ->pair;
       }
       
       it = it->right;
