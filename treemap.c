@@ -167,11 +167,16 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
     
     if( ! tree->lower_than(it->pair->key,key) ){
-      if(it->left == NULL) return it->pair;
-      it = it->left; 
+      if(it->left == NULL){
+        tree->current = it;
+        return it->pair;
+      }it = it->left; 
     
     }else{
-      if(it->right == NULL) return it->pair;
+      if(it->right == NULL){
+        tree->current = it;
+        return it->pair;
+      }
       it = it->right;
     }
 
