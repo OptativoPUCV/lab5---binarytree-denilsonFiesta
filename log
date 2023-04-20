@@ -362,3 +362,17 @@ Thu 20 Apr 2023 05:26:10 PM UTC:
  tests:  22|2
 total_score: 50/70
 eb3e4d3
+Thu 20 Apr 2023 05:31:46 PM UTC: 
+ treemap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+treemap.c:175:2: error: expected identifier or ‘(’ before ‘else’
+  175 | }else return parent;
+      |  ^~~~
+treemap.c: In function ‘firstUp’:
+treemap.c:175:1: error: control reaches end of non-void function [-Werror=return-type]
+  175 | }else return parent;
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+c98e3cc
