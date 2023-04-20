@@ -182,6 +182,7 @@ Pair * nextTreeMap(TreeMap * tree) {
       return tree->current->pair;
     }else{
       tree->current = firstUp(tree->current, tree->current->parent);
-      return tree->current->pair;
+      if(tree->current == NULL) return NULL;
+      else return tree->current->pair;
     }
   }
