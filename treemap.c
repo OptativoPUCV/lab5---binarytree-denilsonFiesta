@@ -180,10 +180,9 @@ Pair * nextTreeMap(TreeMap * tree) {
     
     if(tree->current->right != NULL){
       tree->current = minimum(tree->current->right);
-      return tree->current->pair;
     }else{
-      tree->current = firstUp(tree->current, tree->current->parent);
-      if(tree->current == NULL) return NULL;
-      else return tree->current->pair;
+      tree->current = firstUp(tree->current, tree->current->parent);  
     }
+    if(tree->current == NULL) return NULL;
+    else return tree->current->pair;
   }
