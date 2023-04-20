@@ -540,3 +540,47 @@ Thu 20 Apr 2023 10:34:27 PM UTC:
  tests:  25|1
 total_score: 60/70
 6db906c
+Thu 20 Apr 2023 10:43:49 PM UTC: 
+ treemap.c | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:160:17: error: initialization of ‘TreeMap *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  160 |   TreeMap* it = tree->root;
+      |                 ^~~~
+treemap.c:164:25: error: ‘TreeMap’ has no member named ‘pair’
+  164 |     if(is_equal(tree, it->pair->key, key)){
+      |                         ^~
+treemap.c:165:21: error: assignment to ‘TreeNode *’ from incompatible pointer type ‘TreeMap *’ [-Werror=incompatible-pointer-types]
+  165 |       tree->current = it;
+      |                     ^
+treemap.c:166:16: error: ‘TreeMap’ has no member named ‘pair’
+  166 |       return it->pair;
+      |                ^~
+treemap.c:169:30: error: ‘TreeMap’ has no member named ‘pair’
+  169 |     if( ! tree->lower_than(it->pair->key,key) ){
+      |                              ^~
+treemap.c:170:12: error: ‘TreeMap’ has no member named ‘elft’
+  170 |       if(it->elft == NULL) return it;
+      |            ^~
+treemap.c:170:35: error: returning ‘TreeMap *’ from a function with incompatible return type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  170 |       if(it->elft == NULL) return it;
+      |                                   ^~
+treemap.c:171:14: error: ‘TreeMap’ has no member named ‘left’
+  171 |       it = it->left;
+      |              ^~
+treemap.c:174:12: error: ‘TreeMap’ has no member named ‘right’
+  174 |       if(it->right == NULL) return it;
+      |            ^~
+treemap.c:174:36: error: returning ‘TreeMap *’ from a function with incompatible return type ‘Pair *’ [-Werror=incompatible-pointer-types]
+  174 |       if(it->right == NULL) return it;
+      |                                    ^~
+treemap.c:175:14: error: ‘TreeMap’ has no member named ‘right’
+  175 |       it = it->right;
+      |              ^~
+treemap.c:179:1: error: control reaches end of non-void function [-Werror=return-type]
+  179 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+944d95e
