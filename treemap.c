@@ -163,10 +163,10 @@ Pair * firstTreeMap(TreeMap * tree) {
 
   TreeNode* it = tree->root;
 
-  if(it == NULL) NULL;
-
-  return minimum(it);
-
+  if(it == NULL) NULL; 
+  tree->current = minimum(it);
+  return tree->current->pair;
+  
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
