@@ -168,7 +168,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 
 TreeNode * firstUp(TreeMap* tree, TreeNode * node, TreeNode* parent){
   if(parent == NULL) return NULL;
-  if(tree->lower_than(node->pair->key ,parent->pair->key )) return firstUp(tree, node, parent->parent);
+  if(!tree->lower_than(node->pair->key ,parent->pair->key )) return firstUp(tree, node, parent->parent);
   else return parent;
 }
 
