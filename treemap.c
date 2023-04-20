@@ -179,7 +179,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
     
     }else{
 
-      if(it->right == NULL) return (firstUp(tree, it, it->parent) ) ->pair;
+      if(it->right == NULL){
+        
+
+          
+        return (firstUp(tree, it, it->parent) ) ->pair;
+        
+
+      }
       
       it = it->right;
     }
