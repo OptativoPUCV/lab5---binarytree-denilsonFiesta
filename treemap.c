@@ -189,6 +189,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
           printf("llegue aca\n");
           return (firstUp(tree, it, it->parent) ) ->pair;
         }
+        printf("llegue aca\n");
       }
       
       it = it->right;
