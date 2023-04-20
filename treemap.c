@@ -180,9 +180,12 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }else{
 
       if(it->right == NULL){
-        printf("llegue aca");
-        if(firstUp(tree, it, it->parent)==NULL) return it->pair;
-        else return (firstUp(tree, it, it->parent) ) ->pair;
+        
+        if(firstUp(tree, it, it->parent)==NULL){
+          if(it== NULL) printf("llegue aca\n");
+          return it->pair;
+        
+        }else return (firstUp(tree, it, it->parent) ) ->pair;
       }
       
       it = it->right;
