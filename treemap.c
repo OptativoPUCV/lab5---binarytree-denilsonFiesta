@@ -49,7 +49,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
   //holi UwU
 
   TreeNode* it = tree->root;
-  TreeNode* parent, new;
+  //TreeNode* parent, new;
   
   if(it==NULL){  
     TreeNode* new =  createTreeNode(key, value);
