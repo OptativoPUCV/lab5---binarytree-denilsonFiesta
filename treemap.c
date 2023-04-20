@@ -166,23 +166,17 @@ Pair * firstTreeMap(TreeMap * tree) {
   return tree->current->pair;
 }
 
+TreeNode * firstUp(TreeNode * node, TreeNode* parent){
+  if(parent == NULL) return NULL;
+  if(lower_than(node->pair->key ,parent->pair->key )) return firstUp(node, parent->parent);
+  else return parent;
+}
 
 Pair * nextTreeMap(TreeMap * tree) {
   if(tree->current->right != NULL){
     tree->current = minimum(tree->current->right);
   }else{
-
-    TreeNode* parent = tree->current->parent;
-    while(parent!= NULL){
-      printf("%d \n", *((int*)parent->pair->key));
-      if(parent->pair->key > tree->current->pair->key){
-        tree->current = parent;
-        printf("Holi");
-        break;
-      }
-      parent = parent->parent;
-    }
-    
+    tree->current = firstUp(tree->current, tree->current->parent);  
   }
   if(tree->current == NULL) return NULL;
   else return tree->current->pair;
