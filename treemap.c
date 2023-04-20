@@ -174,6 +174,8 @@ TreeNode * firstUp(TreeNode * node, TreeNode* parent){
   if(node->pair->key > parent->pair->key) return firstUp(node, parent->parent);
   else return parent;
 
+}
+
 Pair * nextTreeMap(TreeMap * tree) {
     
     if(tree->current->right != NULL){
