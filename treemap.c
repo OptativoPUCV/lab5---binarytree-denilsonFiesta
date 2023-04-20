@@ -181,7 +181,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 
       if(it->right == NULL){
         if(firstUp(tree, it, it->parent)==NULL) return it->pair;
-        else firstUp(tree, it, it->parent)->pair;
+        else return (firstUp(tree, it, it->parent) ) ->pair;
       }
       
       it = it->right;
