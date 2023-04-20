@@ -182,9 +182,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
       if(it->right == NULL){
         
         if(firstUp(tree, it, it->parent)==NULL){
-          printf("asdf : %d\n", *(int*)it->pair->key) ;
-          
-          return it->pair;
+          //printf("asdf : %d\n", *(int*)it->pair->key) ;
+          Pair* laPtm = it->pair;
+          return laPtm;
         
         }else{
           
