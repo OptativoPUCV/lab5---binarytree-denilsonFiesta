@@ -188,15 +188,15 @@ Pair * upperBound(TreeMap * tree, void* key) {
         } 
         
         tree->current = it->parent;
-        
-        return it->parent->pair;
+        it = it->parent;
+        break;
       }
       it = it->right;
     }
 
   }
 
-  return it->parent;
+  return it->parent->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
