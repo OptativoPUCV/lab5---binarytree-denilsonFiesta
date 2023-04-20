@@ -172,31 +172,23 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
     
     if( ! tree->lower_than(it->pair->key,key) ){
-      
-      if(it->left== NULL){
-        tree->current = it;
-        break;
-      }
+
+      if(it->left == NULL) return it;
       
       it = it->left; 
     
     }else{
-      if(it->right== NULL){
-        if(it->parent == NULL){
-          tree->current = it;
-          break;  
-        } 
-        
-        tree->current = it->parent;
-        it = it->parent;
-        break;
+
+      if(it->right == NULL){
+        if(firstUp(tree, it, it->parent)==NULL) return it->pair;
+        else firstUp(tree, it, it->parent)->pair;
       }
+      
       it = it->right;
     }
-    if(it== NULL)printf("holi UWU \n");
   }
 
-  return it->pair;
+  return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
