@@ -174,7 +174,7 @@ Pair * nextTreeMap(TreeMap * tree) {
 
     TreeNode* parent = tree->current->parent;
     while(parent!= NULL){
-      printf("%d", parent->pair->key);
+      printf("%d", (int)parent->pair->key);
       if(parent->pair->key > tree->current->pair->key){
         tree->current = parent;
         printf("Holi");
